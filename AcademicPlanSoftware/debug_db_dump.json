@@ -1,0 +1,652 @@
+[
+    {
+        "courseNum": "courseNum",
+        "courseName": "courseName",
+        "Fall_Odd": "Fall_Odd",
+        "Spr_Even": "Spr_Even",
+        "Sum_Even": "Sum_Even",
+        "Fall_Even": "Fall_Even",
+        "Spr_Odd": "Spr_Odd",
+        "Sum_Odd": "Sum_Odd"
+    },
+    {
+        "courseNum": "CS307",
+        "courseName": "Foundations of Web Development",
+        "Fall_Odd": "",
+        "Spr_Even": "DL",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "DL",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS309\/CS309L",
+        "courseName": "Introduction to Digital Logic Design\/Digital Design Lab",
+        "Fall_Odd": "CN",
+        "Spr_Even": "CD",
+        "Sum_Even": "DL",
+        "Fall_Even": "CN",
+        "Spr_Odd": "CD",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "CS310",
+        "courseName": "Professional Ethics of Computing",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "CS317",
+        "courseName": "Computer Science I",
+        "Fall_Odd": "SCN",
+        "Spr_Even": "SCD",
+        "Sum_Even": "DL",
+        "Fall_Even": "SCN",
+        "Spr_Odd": "SCD",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "CS318",
+        "courseName": "Computer Science II",
+        "Fall_Odd": "SCN",
+        "Spr_Even": "SND",
+        "Sum_Even": "SCN",
+        "Fall_Even": "SCD",
+        "Spr_Odd": "SCN",
+        "Sum_Odd": "SCN"
+    },
+    {
+        "courseNum": "CS340",
+        "courseName": "Introduction to Assembly Language and Computer Organization",
+        "Fall_Odd": "",
+        "Spr_Even": "CD",
+        "Sum_Even": "CD",
+        "Fall_Even": "",
+        "Spr_Odd": "CD",
+        "Sum_Odd": "CD"
+    },
+    {
+        "courseNum": "CS365\/ITE365",
+        "courseName": "Visual Application Development",
+        "Fall_Odd": "DL",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "DL",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS367\/ITE367",
+        "courseName": "Enterprise Appliccation Development",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "CN",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS372",
+        "courseName": "Data Structures (Computer Science III)",
+        "Fall_Odd": "SCN",
+        "Spr_Even": "SCD",
+        "Sum_Even": "SCN",
+        "Fall_Even": "SCD",
+        "Spr_Odd": "SCN",
+        "Sum_Odd": "SCN"
+    },
+    {
+        "courseNum": "CS380",
+        "courseName": "Programming for the Web",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "BL",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "BL"
+    },
+    {
+        "courseNum": "CS382\/ITE382",
+        "courseName": "Mobile Device Software Development",
+        "Fall_Odd": "",
+        "Spr_Even": "CN",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "CN",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS385",
+        "courseName": "Pragmatic Artificial Intelligence \u00e2\u20ac\u201c Cloud Based Machine Learning",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "DL",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS409",
+        "courseName": "Computer Organization and Architecture",
+        "Fall_Odd": "CN",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "CN",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS414",
+        "courseName": "Programming Language",
+        "Fall_Odd": "CD",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "CN",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS415",
+        "courseName": "Operating Systems",
+        "Fall_Odd": "",
+        "Spr_Even": "SCN",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "SCD",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS417",
+        "courseName": "Topics in Object Oriented Programming",
+        "Fall_Odd": "SCN",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "SCD",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS418",
+        "courseName": "Advanced Object Oriented Applications",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS423",
+        "courseName": "Computer Graphics\/Game Design",
+        "Fall_Odd": "CN",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS451",
+        "courseName": "Software Engineering",
+        "Fall_Odd": "DL",
+        "Spr_Even": "",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "CS452\/CS452L",
+        "courseName": "Senior Software Engineering Project\/SSEP Lab",
+        "Fall_Odd": "BL",
+        "Spr_Even": "BL",
+        "Sum_Even": "",
+        "Fall_Even": "BL",
+        "Spr_Odd": "BL",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS454",
+        "courseName": "System Security Management",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "DL",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "CS462",
+        "courseName": "Directed Study\/Special Computer Science Project",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS472",
+        "courseName": "Analysis of Algorithms",
+        "Fall_Odd": "",
+        "Spr_Even": "SCN",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "SCN",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS474",
+        "courseName": "Introduction to Formal Language Theory",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS475",
+        "courseName": "Introduction to the Theory of Computing",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "SCD",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS484",
+        "courseName": "Applied Cryptography and System Security",
+        "Fall_Odd": "DL",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "DL",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS485",
+        "courseName": "Modern Artificial Intelligence",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "SCN"
+    },
+    {
+        "courseNum": "CS486",
+        "courseName": "Natural Language Processing",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "SCN"
+    },
+    {
+        "courseNum": "CS487",
+        "courseName": "Robotics",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "CN",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS488",
+        "courseName": "AI Reasoning, Decisions, and Learning",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "CS489",
+        "courseName": "Soft Computing and Fuzzy Logic",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE301",
+        "courseName": "Problem Solving with Computers",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "ITE305",
+        "courseName": "Networking Fundamentals",
+        "Fall_Odd": "CN",
+        "Spr_Even": "",
+        "Sum_Even": "CN",
+        "Fall_Even": "CN",
+        "Spr_Odd": "",
+        "Sum_Odd": "CN"
+    },
+    {
+        "courseNum": "ITE306",
+        "courseName": "Local Area Networks",
+        "Fall_Odd": "CN",
+        "Spr_Even": "",
+        "Sum_Even": "CN",
+        "Fall_Even": "CN",
+        "Spr_Odd": "",
+        "Sum_Odd": "CN"
+    },
+    {
+        "courseNum": "ITE307",
+        "courseName": "Wide Area Networks",
+        "Fall_Odd": "",
+        "Spr_Even": "CN",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "CN",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE308",
+        "courseName": "Network Architectures",
+        "Fall_Odd": "",
+        "Spr_Even": "CN",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "CN",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE313",
+        "courseName": "Data Analysis & Visualization",
+        "Fall_Odd": "",
+        "Spr_Even": "DL",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "DL",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE315",
+        "courseName": "Scripting Languages and System Administration",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "CN",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "ITE321",
+        "courseName": "System Analysis & Design",
+        "Fall_Odd": "DL",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "DL",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE327\/ITE327L",
+        "courseName": "Database Systems\/Database Systems Lab",
+        "Fall_Odd": "CN",
+        "Spr_Even": "",
+        "Sum_Even": "DL",
+        "Fall_Even": "CN",
+        "Spr_Odd": "",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "ITE350",
+        "courseName": "UX Design",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "DL",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "ITE365\/CS365",
+        "courseName": "Visual Application Develop",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE367\/CS367",
+        "courseName": "Enterprise Application Development",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE371",
+        "courseName": "Health Information Technology Concepts and Practices",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "DL",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE382\/CS382",
+        "courseName": "Mobile Device Software Development",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE405",
+        "courseName": "Internetworking Devices",
+        "Fall_Odd": "",
+        "Spr_Even": "CN",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "CN",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE406",
+        "courseName": "The Internet",
+        "Fall_Odd": "",
+        "Spr_Even": "CN",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "CN",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE407",
+        "courseName": "Network Processes and Protocols",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "CN",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "CN"
+    },
+    {
+        "courseNum": "ITE408",
+        "courseName": "Enterprise Network Design and Management",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "CN",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "CN"
+    },
+    {
+        "courseNum": "ITE350",
+        "courseName": "UX Design",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "DL",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "ITE441",
+        "courseName": "System Integration & Architecture",
+        "Fall_Odd": " \"",
+        "Spr_Even": " DL",
+        "Sum_Even": " \"",
+        "Fall_Even": " \"",
+        "Spr_Odd": " DL",
+        "Sum_Odd": " \""
+    },
+    {
+        "courseNum": "ITE450",
+        "courseName": "Human Computer Interaction",
+        "Fall_Odd": " \"",
+        "Spr_Even": " DL",
+        "Sum_Even": " \"",
+        "Fall_Even": " \"",
+        "Spr_Odd": " DL",
+        "Sum_Odd": " \""
+    },
+    {
+        "courseNum": "MA308",
+        "courseName": "Discrete Mathematics",
+        "Fall_Odd": " D",
+        "Spr_Even": " BL",
+        "Sum_Even": " BL",
+        "Fall_Even": " D",
+        "Spr_Odd": " BL",
+        "Sum_Odd": " BL"
+    },
+    {
+        "courseNum": "MA310",
+        "courseName": "Matrices & Linear Algebra",
+        "Fall_Odd": "D",
+        "Spr_Even": "",
+        "Sum_Even": "BL",
+        "Fall_Even": "D",
+        "Spr_Odd": "",
+        "Sum_Odd": "BL"
+    },
+    {
+        "courseNum": "MA331",
+        "courseName": "Applied Probability & Statistics",
+        "Fall_Odd": "BL",
+        "Spr_Even": "BL",
+        "Sum_Even": "",
+        "Fall_Even": "BL",
+        "Spr_Odd": "BL",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "UNV300",
+        "courseName": "Pathways to Success",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "UNV400",
+        "courseName": "Career Seminar",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "Elective1",
+        "courseName": "Elective1",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "Elective2",
+        "courseName": "Elective2",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "Elective3",
+        "courseName": "Elective3",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "Elective4",
+        "courseName": "Elective4",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "Elective5",
+        "courseName": "Elective5",
+        "Fall_Odd": "DL",
+        "Spr_Even": "DL",
+        "Sum_Even": "DL",
+        "Fall_Even": "DL",
+        "Spr_Odd": "DL",
+        "Sum_Odd": "DL"
+    },
+    {
+        "courseNum": "ITE313",
+        "courseName": "Data Analysis & Visualization",
+        "Fall_Odd": "",
+        "Spr_Even": "DL",
+        "Sum_Even": "",
+        "Fall_Even": "",
+        "Spr_Odd": "DL",
+        "Sum_Odd": ""
+    },
+    {
+        "courseNum": "ITE315",
+        "courseName": "Scripting Languages and System Administration",
+        "Fall_Odd": "",
+        "Spr_Even": "",
+        "Sum_Even": "CN",
+        "Fall_Even": "",
+        "Spr_Odd": "",
+        "Sum_Odd": "DL"
+    }
+]

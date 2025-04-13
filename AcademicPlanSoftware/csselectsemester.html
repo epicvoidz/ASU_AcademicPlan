@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semester Selection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #eef2f3;
+    }
+
+    .header {
+      padding: 20px;
+      text-align: center;
+      background: #092a6d;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .header img {
+      margin-top: 20px;
+      max-width: 250px;
+      height: auto;
+    }
+
+    .semester-dropdown {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .dropdown-toggle {
+      background-color: #092a6d !important;
+      border-color: #092a6d !important;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      width: 100%;
+    }
+
+    .dropdown-menu {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    .dropdown-item {
+      padding: 0.5rem 1rem;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-item:hover {
+      background-color: #e9ecef;
+    }
+
+    .top-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .layout-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .course-selection {
+      flex: 2;
+      min-width: 600px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    #semester-container {
+      flex: 1;
+      min-height: 200px;
+    }
+
+    .semester-section {
+      background: #eaf6ff;
+      border-left: 5px solid #1e90ff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .semester-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #0a3d62;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .semester-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+
+    .abbreviation-box {
+      background: #eaf6ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    .blue-box, .red-box, .green-box, .purple-box {
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: white;
+      font-weight: normal;
+    }
+
+    .blue-box { background-color: #1e3d8f; }
+    .red-box { background-color: #9c1e1e; }
+    .green-box { background-color: #1e8f3d; }
+    .purple-box { background-color: #6f1e8f; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #0a3d62;
+      color: white;
+    }
+
+    tr:nth-child(even) { background: #f8f9fa; }
+
+    .course-checkbox {
+      accent-color: #1e90ff;
+      transform: scale(1.2);
+      margin-right: 6px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #0a3d62, #1e90ff);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1em;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #1e90ff, #0a3d62);
+    }
+
+    .electives-btn {
+      background: linear-gradient(135deg, #0cc238, #1e8f3d);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: 0.3s;
+      width: 175px;
+      margin-top: 20px;
+      margin-left: auto;
+    }
+
+    .submit-btn, .electives-btn {
+      margin-right: 10px;
+    }
+
+    .electives-btn:hover {
+      background: linear-gradient(135deg, #1e8f3d, #0cc238);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      font-family: sans-serif;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 8px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover, .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+
+    .unavailable {
+      color: #666 !important;
+      background-color: #f0f0f0;
+    }
+
+    .unavailable input[type='checkbox'] {
+      cursor: not-allowed;
+    }
+
+    #data-container tr:not(.unavailable):hover {
+      background-color: #cce5ff;
+      cursor: pointer;
+    }
+
+    .selected-course {
+      background-color: #c8f7c5 !important;
+    }
+
+    .selected-course label {
+      color: #1e8f3d !important;
+      font-weight: bold;
+    }
+
+    .selected-course .course-checkbox {
+      visibility: hidden;
+    }
+
+    .hidden-course-section {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Computer Science Semester Selection</h1>
+    <img src="CSlogo1.png" alt="Computer Science Logo">
+  </header>
+
+  <div class="semester-dropdown">
+    <div class="dropdown w-50">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="courseDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        Select your starting semester
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="courseDropdown">
+        <li><a class="dropdown-item" href="?semester=SumOdd">Summer Odd</a></li>
+        <li><a class="dropdown-item" href="?semester=FallOdd">Fall Odd</a></li>
+        <li><a class="dropdown-item" href="?semester=SprEven">Spring Even</a></li>
+        <li><a class="dropdown-item" href="?semester=SumEven">Summer Even</a></li>
+        <li><a class="dropdown-item" href="?semester=FallEven">Fall Even</a></li>
+        <li><a class="dropdown-item" href="?semester=SprOdd">Spring Odd</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="main-content" class="hidden-course-section">
+    <div class="top-container">
+      <div class="layout-row">
+        <div class="course-selection">
+          <p>Select courses and submit to generate your course plan.</p>
+          <h2 id="semester-prompt" style="text-align:center;"></h2>
+          <form id="course-form">
+            <table>
+              <thead>
+                <tr>
+                  <th>Courses</th>
+                  <th>Credit Hours</th>
+                </tr>
+              </thead>
+              <tbody id="data-container"></tbody>
+            </table>
+            <input type="submit" class="submit-btn" value="Submit">
+            <input type="submit" class="submit-btn" onclick="window.print()" value="Print" id="print-btn" style="display:none;">
+            <button id="skip-btn" type="button" class="submit-btn" style="display:none;">Skip</button>
+            <input type="button" id="electivesButton" class="electives-btn" value="View Electives">
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h2>Information Technology Elective Courses</h2>
+                  <ul>
+                    <li>CS307 - Foundations of Web Development</li>
+                    <li>CS365 - Visual Application Development</li>
+                    <li>CS367 - Enterprise Application Development</li>
+                    <li>CS380 - Web Application Development</li>
+                    <li>CS382 - Mobile Device Software Development</li>
+                    <li>CS385 - Pragmatic Artificial Intelligence - Cloud Based Machine Learning</li>
+                    <li>CS409 - Computer Organization and architecture</li>
+                    <li>CS418 - Advanced Object Oriented Applications</li>
+                    <li>CS423 - Principles of Computer Graphics and Game Design</li>
+                    <li>CS475 - Introduction to the Theory of Computing</li>
+                    <li>CS484 - Applied Cryptography and System Security</li>
+                    <li>CS485 - Modern Artificial Intelligence</li>
+                    <li>CS486 - Natural Language Processing</li>
+                  </ul>
+                </div>
+              </div>
+        </form>
+        </div>
+        <div id="semester-container"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasSemester = urlParams.has('semester');
+
+      if (hasSemester) {
+        // Show course selection only when a semester has been selected
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+          mainContent.classList.remove('hidden-course-section');
+        }
+      }
+    });
+
+    function onSemesterChange(value) {
+      window.location.href = window.location.pathname + value;
+    }
+    $(document).ready(function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const semParam = urlParams.get('semester');
+  
+      if (urlParams.has('semester')) {
+        $('#main-content').removeClass('hidden-course-section');
+      }
+  
+      const prerequisites = {
+        ITE327: ['CS317'],
+        CS318: ['CS317'],
+        CS310: ['CS317'],
+        CS372: ['CS318'],
+        CS340: ['CS309','CS318'],
+        CS414: ['CS372'],
+        CS415: ['CS340','CS372'],
+        CS417: ['CS372'],
+        CS451: ['CS372'],
+        CS472: ['CS372'],
+        MA331: ['MA308'],
+        UNV400: ['UNV300'],
+        CS452: ['CS414','CS415','CS451','CS472']
+      };
+  
+      const startingCourses = ['CS309','CS310','CS317','Elective1', 'UNV300'];
+  
+      let selectedItems = [];
+      let totalCourseCount = 0;
+      let currentSemesterIndex = 0;
+  
+      let earliestSemesterFor = {};
+      let semesterDataAttr = [];
+      let connectParam = '';
+      
+      if (semParam === 'SumOdd') {
+        earliestSemesterFor = {
+          'Elective1': 0,
+          'CS309': 0,
+          'CS310': 0,
+          'CS317': 0,
+          'UNV300': 0,
+          'MA308': 1,
+          'MA310': 1,
+          'MA321': 1,
+          'MA331': 2,
+          'Elective2': 1,
+          'CS318': 1,
+          'ITE327': 1,
+          'Elective3': 2,
+          'CS372': 2,
+          'Elective4': 3,
+          'CS414': 3,
+          'CS417': 3,
+          'CS451': 3,
+          'UNV400': 3,
+          'CS452': 4,
+          'Elective5': 4
+        };
+        semesterDataAttr = ["sumOdd", "fallOdd", "sprEven", "sumEven", "fallEven", "sprOdd"];
+        connectParam = "SumOdd";
+        document.title = "Summer 2025 Available Courses";
+        $('#mainHeading').html("<strong>Summer 2025 Available Courses</strong>");
+        } else if (semParam === 'FallOdd') {
+        earliestSemesterFor = {
+          'Elective1': 0,
+          'CS309': 0,
+          'CS310': 0,
+          'CS317': 0,
+          'UNV300': 0,
+          'MA308': 1,
+          'MA310': 1,
+          'MA321': 1,
+          'MA331': 2,
+          'Elective2': 1,
+          'CS318': 1,
+          'ITE327': 1,
+          'Elective3': 2,
+          'CS372': 2,
+          'Elective4': 3,
+          'CS414': 3,
+          'CS417': 3,
+          'CS451': 3,
+          'UNV400': 3,
+          'CS452': 4,
+          'Elective5': 4
+        };
+        semesterDataAttr = ["fallOdd", "sprEven", "sumEven", "fallEven", "sprOdd", "sumOdd"];
+        connectParam = "FallOdd";
+        document.title = "Fall 2025 Available Courses";
+        $('#mainHeading').html("<strong>Fall 2025 Available Courses</strong>");
+      } else if (semParam === 'SprEven') {
+        earliestSemesterFor = {
+          'Elective1': 0,
+          'CS309': 0,
+          'CS310': 0,
+          'CS317': 0,
+          'UNV300': 0,
+          'MA308': 1,
+          'MA310': 1,
+          'MA321': 1,
+          'MA331': 2,
+          'Elective2': 1,
+          'CS318': 1,
+          'ITE327': 1,
+          'Elective3': 2,
+          'CS372': 2,
+          'Elective4': 3,
+          'CS414': 3,
+          'CS417': 3,
+          'CS451': 3,
+          'UNV400': 3,
+          'CS452': 4,
+          'Elective5': 4
+        };
+        semesterDataAttr = ["sprEven", "sumEven", "fallEven", "sprOdd", "sumOdd", "fallOdd"];
+        connectParam = "SprEven";
+        document.title = "Spring 2026 Available Courses";
+        $('#mainHeading').html("<strong>Spring 2026 Available Courses</strong>");
+      } else if (semParam === 'SumEven') {
+        earliestSemesterFor = {
+          'Elective1': 0,
+          'CS309': 0,
+          'CS310': 0,
+          'CS317': 0,
+          'UNV300': 0,
+          'MA308': 1,
+          'MA310': 1,
+          'MA321': 1,
+          'MA331': 2,
+          'Elective2': 1,
+          'CS318': 1,
+          'ITE327': 1,
+          'Elective3': 2,
+          'CS372': 2,
+          'Elective4': 3,
+          'CS414': 3,
+          'CS417': 3,
+          'CS451': 3,
+          'UNV400': 3,
+          'CS452': 4,
+          'Elective5': 4
+        };
+        semesterDataAttr = ["sumEven", "fallEven", "sprOdd", "sumOdd", "fallOdd", "sprEven"];
+        connectParam = "SummerEven";
+        document.title = "Summer 2026 Available Courses";
+        $('#mainHeading').html("<strong>Summer 2026 Available Courses</strong>");
+      } else if (semParam === 'FallEven') {
+        earliestSemesterFor = {
+          'Elective1': 0,
+          'CS309': 0,
+          'CS310': 0,
+          'CS317': 0,
+          'UNV300': 0,
+          'MA308': 1,
+          'MA310': 1,
+          'MA321': 1,
+          'MA331': 2,
+          'Elective2': 1,
+          'CS318': 1,
+          'ITE327': 1,
+          'Elective3': 2,
+          'CS372': 2,
+          'Elective4': 3,
+          'CS414': 3,
+          'CS417': 3,
+          'CS451': 3,
+          'UNV400': 3,
+          'CS452': 4,
+          'Elective5': 4
+        };
+        semesterDataAttr = ["fallEven", "sprOdd", "sumOdd", "fallOdd", "sprEven", "sumEven"];
+        connectParam = "FallEven";
+        document.title = "Fall 2026 Available Courses";
+        $('#mainHeading').html("<strong>Fall 2026 Available Courses</strong>");
+      } else if (semParam === 'SprOdd') {
+        earliestSemesterFor = {
+          'Elective1': 0,
+          'CS309': 0,
+          'CS310': 0,
+          'CS317': 0,
+          'UNV300': 0,
+          'MA308': 1,
+          'MA310': 1,
+          'MA321': 1,
+          'MA331': 2,
+          'Elective2': 1,
+          'CS318': 1,
+          'ITE327': 1,
+          'Elective3': 2,
+          'CS372': 2,
+          'Elective4': 3,
+          'CS414': 3,
+          'CS417': 3,
+          'CS451': 3,
+          'UNV400': 3,
+          'CS452': 4,
+          'Elective5': 4
+        };
+        semesterDataAttr = ["sprOdd", "sumOdd", "fallOdd", "sprEven", "sumEven", "fallEven"];
+        connectParam = "SpringOdd";
+        document.title = "Spring 2027 Available Courses";
+        $('#mainHeading').html("<strong>Spring 2027 Available Courses</strong>");
+      }
+  
+      function getSemesterName(i) {
+  const baseYear = 2025;
+  let season = '';
+  let year = baseYear;
+  const cycle = i % 3;
+  const offset = Math.floor(i / 3);
+
+  if (semParam === 'SumOdd') {
+    if (cycle === 0) { season = 'Summer'; year += offset; }
+    else if (cycle === 1) { season = 'Fall'; year += offset; }
+    else { season = 'Spring'; year += offset + 1; }
+  }
+
+  else if (semParam === 'FallOdd') {
+    if (cycle === 0) { season = 'Fall'; year += offset; }
+    else if (cycle === 1) { season = 'Spring'; year += offset + 1; }
+    else { season = 'Summer'; year += offset + 1; }
+  }
+
+  else if (semParam === 'SprEven') {
+    if (cycle === 0) { season = 'Spring'; year += offset + 1; } 
+    else if (cycle === 1) { season = 'Summer'; year += offset + 1; }
+    else { season = 'Fall'; year += offset + 1; }
+  }
+
+  else if (semParam === 'SumEven') {
+    if (cycle === 0) { season = 'Summer'; year += offset + 1; }  
+    else if (cycle === 1) { season = 'Fall'; year += offset + 1; }
+    else { season = 'Spring'; year += offset + 2; }              
+  }
+
+  else if (semParam === 'FallEven') {
+    if (cycle === 0) { season = 'Fall'; year += offset + 1; }    
+    else if (cycle === 1) { season = 'Spring'; year += offset + 2; }  
+    else { season = 'Summer'; year += offset + 2; }             
+  }
+
+  else if (semParam === 'SprOdd') {
+    if (cycle === 0) { season = 'Spring'; year += offset + 2; }  
+    else if (cycle === 1) { season = 'Summer'; year += offset + 2; }
+    else { season = 'Fall'; year += offset + 2; }
+  }
+
+  return `${season} ${year}`;
+}
+
+
+function getSemesterIndexFromTitle(title) {
+  const [rawSeason, rawYear] = title.trim().split(" ");
+  const season = rawSeason.charAt(0).toUpperCase() + rawSeason.slice(1).toLowerCase(); 
+  const year = parseInt(rawYear);
+  const baseYear = 2025;
+
+  if (semParam === 'SumOdd') {
+    if (season === 'Summer') return (year - baseYear) * 3;
+    if (season === 'Fall')   return (year - baseYear) * 3 + 1;
+    if (season === 'Spring') return (year - baseYear - 1) * 3 + 2;
+  } 
+
+  else if (semParam === 'FallOdd') {
+    if (season === 'Fall')   return (year - baseYear) * 3;
+    if (season === 'Spring') return (year - baseYear - 1) * 3 + 1;
+    if (season === 'Summer') return (year - baseYear - 1) * 3 + 2;
+  } 
+
+  else if (semParam === 'SprEven') {
+    if (season === 'Spring') return (year - baseYear - 1) * 3;
+    if (season === 'Summer') return (year - baseYear - 1) * 3 + 1;
+    if (season === 'Fall')   return (year - baseYear - 1) * 3 + 2;
+  } 
+
+  else if (semParam === 'SumEven') {
+  if (season === 'Summer') return (year - baseYear - 1) * 3;
+  if (season === 'Fall')   return (year - baseYear - 1) * 3 + 1;
+  if (season === 'Spring') return (year - baseYear - 2) * 3 + 2;  
+}
+
+else if (semParam === 'FallEven') {
+  if (season === 'Fall')   return (year - baseYear - 1) * 3;
+  if (season === 'Spring') return (year - baseYear - 2) * 3 + 1;
+  if (season === 'Summer') return (year - baseYear - 2) * 3 + 2; 
+}
+
+  else if (semParam === 'SprOdd') {
+    if (season === 'Spring') return (year - baseYear - 2) * 3;
+    if (season === 'Summer') return (year - baseYear - 2) * 3 + 1;
+    if (season === 'Fall')   return (year - baseYear - 2) * 3 + 2;
+  }
+
+  return Infinity;
+}
+
+  
+      function insertSemesterBlock(html) {
+        const semesterDiv = $(html);
+        const newSemesterTitle = semesterDiv.find('.semester-title').text().trim();
+        const newIndex = getSemesterIndexFromTitle(newSemesterTitle);
+  
+        let inserted = false;
+        $('#semester-container .semester-section').each(function () {
+          const existingTitle = $(this).find('.semester-title').text().trim();
+          const existingIndex = getSemesterIndexFromTitle(existingTitle);
+  
+          if (newIndex < existingIndex) {
+            $(this).before(semesterDiv);
+            inserted = true;
+            return false; // stop looping
+          }
+        });
+  
+        if (!inserted) {
+          $('#semester-container').append(semesterDiv);
+        }
+      }
+  
+      function prereqsMet(courseCode) {
+        const reqs = prerequisites[courseCode] || [];
+        return reqs.every(r => selectedItems.includes(r));
+      }
+  
+      function semesterAvailable(courseCode) {
+        const needed = earliestSemesterFor[courseCode] || 0;
+        return (currentSemesterIndex >= needed);
+      }
+  
+      function canTakeCourse(courseCode) {
+        if (selectedItems.includes(courseCode)) return false;
+        return (semesterAvailable(courseCode) && prereqsMet(courseCode));
+      }
+  
+    //   const classTypeMap = {
+    //     'CD':  'blue-box',
+    //     'CN':  'blue-box',
+    //     'DL':  'red-box',
+    //     'DLC': 'red-box',
+    //     'SCD': 'green-box',
+    //     'SCN': 'green-box',
+    //     'BL':  'purple-box'
+    //   };
+  
+    //   function styleClassType(ct) {
+    //     const upper = ct.toUpperCase().trim();
+    //     return classTypeMap[upper]
+    //       ? `<span class="${classTypeMap[upper]}">${upper}</span>`
+    //       : ct;
+    //   }
+  
+      const semesterIcons = {
+        'Summer': 'sun.png',
+        'Fall':   'leaf.png',
+        'Spring': 'flower.png'
+      };
+  
+      function getSemesterIcon(semesterName) {
+        const [season] = semesterName.split(" ");
+        return semesterIcons[season] || '';
+      }
+  
+      $.ajax({
+  url: 'connect.php',
+  type: 'GET',
+  data: { allCourses: '1', semester: connectParam },
+  dataType: 'json',
+  success: function (courses) {
+    let container = $('#data-container');
+    container.empty();
+    totalCourseCount = courses.length;
+
+    const creditMap = {
+      'MA308': 3, 'MA310': 3, 'MA321': 3, 'MA331': 3, 'CS309': 4,
+      'CS310': 1, 'CS317': 3, 'CS318': 3, 'CS340': 3, 'CS372': 3,
+      'CS414': 3, 'CS415': 3, 'CS451': 3, 'CS452': 3, 'CS472': 3,
+      'ITE305': 4, 'ITE327': 4, 'ITE420': 3,
+      'Elective1': 3, 'Elective2': 3, 'Elective3': 3, 'Elective4': 3, 'Elective5': 3
+    };
+
+    $.each(courses, function (idx, course) {
+      const courseCode = course.courseNum.split('/')[0].trim();
+      const rowID = 'row-' + courseCode;
+      const credit = creditMap[courseCode] || 3;
+
+      let row = `
+        <tr id="${rowID}" data-course="${courseCode}"
+            data-fall-odd="${course.Fall_Odd}"
+            data-spr-even="${course.Spr_Even}"
+            data-sum-even="${course.Sum_Even}"
+            data-fall-even="${course.Fall_Even}"
+            data-spr-odd="${course.Spr_Odd}"
+            data-sum-odd="${course.Sum_Odd}">
+          <td>
+            <input type="checkbox" class="course-checkbox" value="${courseCode}">
+            <label><strong>${course.courseNum} - ${course.courseName}</strong></label>
+          </td>
+          <td><strong>${credit}</strong></td>
+        </tr>
+      `;
+      container.append(row);
+    });
+
+    updateCourseRows();
+  },
+  error: function () {
+    alert('Could not load course data.');
+  }
+});
+
+  
+      function updateCourseRows() {
+        $('#data-container tr').each(function(){
+          const courseCode = $(this).attr('data-course');
+  
+          if (selectedItems.includes(courseCode)) {
+            $(this).addClass('selected-course').removeClass('unavailable');
+            return;
+          }
+  
+          let isEnabled = (currentSemesterIndex === 0 && startingCourses.includes(courseCode))
+                          ? true
+                          : canTakeCourse(courseCode);
+  
+          let dataAttr = semesterDataAttr[currentSemesterIndex % semesterDataAttr.length];
+  
+          if (dataAttr) {
+            let valueForThisSemester = $(this).data(dataAttr);
+            if (!valueForThisSemester || ('' + valueForThisSemester).toLowerCase() === 'null') {
+              isEnabled = false;
+            }
+          }
+  
+          if (isEnabled) {
+            $(this).removeClass('unavailable');
+            $(this).find('input[type="checkbox"]').prop('disabled', false);
+          } else {
+            $(this).addClass('unavailable');
+            $(this).find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
+          }
+        });
+  
+        let anyAvailable = false;
+        $('#data-container tr').each(function () {
+          const courseCode = $(this).attr('data-course');
+          const isUnavailable = $(this).hasClass('unavailable');
+          const isAlreadySelected = selectedItems.includes(courseCode);
+          if (!isUnavailable && !isAlreadySelected) {
+            anyAvailable = true;
+            return false;
+          }
+        });
+  
+        if (!anyAvailable && selectedItems.length < totalCourseCount) {
+          $('#skip-btn').show();
+        } else {
+          $('#skip-btn').hide();
+        }
+      }
+  
+      $('#course-form').submit(function(e){
+        e.preventDefault();
+  
+        let newlySelected = [];
+        $('#data-container tr').each(function(){
+          const courseCode = $(this).attr('data-course');
+          const checkbox   = $(this).find('input[type="checkbox"]');
+          if (checkbox.is(':checked') && !selectedItems.includes(courseCode)) {
+            newlySelected.push(courseCode);
+          }
+        });
+  
+        if (newlySelected.length > 0) {
+          selectedItems = selectedItems.concat(newlySelected);
+  
+          let semesterName = getSemesterName(currentSemesterIndex);
+          let iconPath = getSemesterIcon(semesterName);
+  
+          let html = `
+            <div class="semester-section">
+              <h4 class="semester-title">
+                ${iconPath ? `<img src="${iconPath}" alt="${semesterName} icon" class="semester-icon">` : ''}
+                ${semesterName}
+              </h4>
+          `;
+  
+          newlySelected.forEach(code => {
+            const row = $('#row-'+code);
+            const labelText = row.find('label').text();
+            const classType = row.find('td:last').html();
+            html += `<p><strong>${labelText}</strong> ${classType}</p>`;
+          });
+          html += `</div>`;
+  
+          insertSemesterBlock(html);
+  
+          currentSemesterIndex++;
+          updateCourseRows();
+  
+          if (selectedItems.length === totalCourseCount) {
+          $('#semester-prompt').html("<strong>You’re all set! 🎉</strong>");
+          createConfetti()
+          $('#print-btn').show(); 
+          } else {
+          $('#semester-prompt').html("<strong>Select courses for " + getSemesterName(currentSemesterIndex) + "</strong>");
+          $('#print-btn').hide(); 
+          }
+
+  
+        } else {
+          alert('No new courses selected or none are available.');
+        }
+      });
+  
+      $('#skip-btn').click(function(){
+        let semesterName = getSemesterName(currentSemesterIndex);
+        let iconPath = getSemesterIcon(semesterName);
+  
+        let html = `
+          <div class="semester-section">
+            <h4 class="semester-title">
+              ${iconPath ? `<img src="${iconPath}" alt="${semesterName} icon" class="semester-icon">` : ''}
+              ${semesterName}
+            </h4>
+            <p>No courses selected for this semester.</p>
+          </div>
+        `;
+        insertSemesterBlock(html);
+  
+        currentSemesterIndex++;
+        updateCourseRows();
+        $('#semester-prompt').html("<strong>Select courses for " + getSemesterName(currentSemesterIndex) + "</strong>");
+  
+      });
+  
+      $('#data-container').on('click', 'tr:not(.unavailable)', function(e) {
+        if (!$(e.target).is('input[type="checkbox"]')) {
+          const checkbox = $(this).find('input[type="checkbox"]');
+          checkbox.prop('checked', !checkbox.prop('checked'));
+        }
+      });
+  
+      $('#semester-prompt').html("<strong>Select courses for " + getSemesterName(currentSemesterIndex) + "</strong>");
+  
+    });
+  
+    function onSemesterChange(value) {
+      window.location.href = window.location.pathname + value;
+    }
+
+const modal = $('#myModal');
+const electivesButton = $('#electivesButton');
+const closeBtn = $('.close');
+
+electivesButton.on('click', function () {
+  modal.fadeIn(200);
+});
+
+closeBtn.on('click', function () {
+  modal.fadeOut(200);
+});
+
+$(window).on('click', function (event) {
+  if (event.target === modal[0]) {
+    modal.fadeOut(200);
+  }
+});
+
+function createConfetti() {
+  // Amount of confetti and colors
+	const confettiCount = 150;
+	const colors = ['#f94144', '#f3722c', '#f8961e', '#f9c74f', '#90be6d', '#43aa8b', '#577590'];
+	const confettiContainer = document.createElement('div');
+  
+  // Spawn point of confetti container
+	confettiContainer.style.position = 'fixed';
+	confettiContainer.style.top = '0';
+	confettiContainer.style.left = '0';
+	confettiContainer.style.width = '100%';
+	confettiContainer.style.height = '100%';
+	confettiContainer.style.pointerEvents = 'none';
+	confettiContainer.style.zIndex = '1000';
+	document.body.appendChild(confettiContainer);
+  
+  // Spawn confetti from the container
+	for (let i = 0; i < confettiCount; i++) {
+		createConfettiPiece(confettiContainer, colors);
+	}
+  
+  // Delete confetti
+	setTimeout(() => {
+		document.body.removeChild(confettiContainer);
+	}, 6000);
+	}
+
+	function createConfettiPiece(container, colors) {
+	const confetti = document.createElement('div');
+  
+	// Randomized properties of pieces
+	const size = Math.random() * 10 + 6;
+	const color = colors[Math.floor(Math.random() * colors.length)];
+	const left = Math.random() * 100;
+	const speed = Math.random() * 3 + 2;
+	const rotation = Math.random() * 360;
+	const rotationSpeed = (Math.random() - 0.5) * 10;
+  
+	// Confetti pieces style
+	confetti.style.position = 'absolute';
+	confetti.style.width = `${size}px`;
+	confetti.style.height = `${size}px`;
+	confetti.style.backgroundColor = color;
+	confetti.style.left = `${left}%`;
+	confetti.style.top = '-10px';
+	confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+	confetti.style.opacity = Math.random() + 0.5;
+  
+	container.appendChild(confetti);
+  
+	// Animated fall
+	let topPosition = -10;
+	let currentRotation = rotation;
+  
+	const fall = setInterval(() => {
+		topPosition += speed;
+		currentRotation += rotationSpeed;
+    
+		confetti.style.top = `${topPosition}px`;
+		confetti.style.transform = `rotate(${currentRotation}deg)`;
+    
+		// Drift because it's very necassary
+		const horizontalPos = parseFloat(confetti.style.left);
+		const drift = (Math.random() - 0.5) * 0.7;
+		confetti.style.left = `${horizontalPos + drift}%`;
+    
+		// Delete confetti that falls off page immediatly
+		if (topPosition > window.innerHeight) {
+		clearInterval(fall);
+		container.removeChild(confetti);
+		}
+	}, 20);
+	}
+
+  </script>
+  
+</body>
+</html>

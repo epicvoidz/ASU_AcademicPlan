@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Computer Science Courses</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            padding: 2px;
+            text-align: center;
+            background: #092a6d;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3vw;
+        }
+
+        .header p {
+            font-size: 3vw;
+        }
+
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: -3vw;
+            left: -3vw;
+            right: -3vw;
+            bottom: -3vw;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+            z-index: -1;
+            transform: rotate(-5);
+        }
+        /* .table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .tableheaders {
+            text-align: left;
+        } */
+         #container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: auto;
+         }
+         .section {
+            width: 100%;
+            min-width: 200px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+         }
+        .item-label {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .item-checkbox {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .btn {
+            border: none;
+            color: white;
+            background-color: #092a6d;
+            padding: 15px 32px;
+            margin: 12px;
+            text-align: center;
+            float: right;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #092a6d;
+        }
+        #lists-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .list-section {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+            width: 200px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .list-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            justify-items: center;
+        }
+
+        .main section {
+            background: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .main section:hover {
+            transform: translateY(-10px);
+        }
+
+        .main h2 {
+            font-size: 2vw;
+            color: #092a6d;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .main p {
+            font-size: 2vw;
+        }
+
+        .main img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2vw 0;
+            background: linear-gradient(135deg, #ddd, #bbb);
+            margin-top: 1.5vw;
+            font-size: 0.5vw;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Computer Science</h1>
+    </header>
+    <h2>Summer 2025 Courses</h2>
+    <div id="container">
+        <div class="section">
+            <table>
+                <tr>
+                    <th>Course Number</th>
+                    <th>Course Name</th>
+                    <th>Prerequisite</th>
+                </tr>
+            </table>
+            <!-- <h3>Course Number</h3>
+            <h3>Course Name</h3>
+            <h3>Prerequisite</h3> -->
+            <div id="data-container"></div>
+        </div>
+        <button id="list-btn" class="btn">Semester</button>
+        <button id="filter-btn" class="btn">Next Semester</button>
+    </div>
+    <div id="lists-container"></div>
+
+    <script>
+        $(document).ready(function() {
+            let selectedItems = [];
+            let listCounter = 0;
+            function fetchData(excludeSelected = false) {
+                $.ajax({
+                    url: "fetchdata.php",
+                    type: "POST",
+                    data: "json",
+                    success: function (response) {
+                        $("#data-container").html("");
+                        response.forEach(item => {
+                            $("#data-container").append(`
+                                <label class="item-label">
+                                    <input type="checkbox" class="item-checkbox" value="${item.id}">
+                                    <span>${item.name}</span>
+                                </label>
+                            `); 
+                        });
+                    }
+                });
+            }
+            $("list-btn").click(function() {
+                fetchData();
+            });
+            $("filter-btn").click(function () {
+                let currentSelection = [];
+                $("item-checkbox:checked").each(function () {
+                    let itemId = $(this).val();
+                    let itemName = $(this).siblings("span").text();
+                    currentSelection.push(itemId);
+                    $(this).closest('.item-label').remove();
+                });
+                if (currentSelection.length > 0) {
+                    listCounter++;
+                    let listHTML = `<div class="list-section">
+                                    <h3 class="list-title">Semester ${listCounter}</h3>`;
+                    currentSelection.forEach(item => {
+                        listHTML += `<p>${item.name}</p>`;
+                    });
+                    listHTML += `</div>`;
+                    $("#lists-container").append(listHTML);
+                }
+                fetchData(true);
+            });
+        });
+    </script>
+</body>
+<body>
+    <header class="header">
+        <h1>Computer Science Courses</h1>
+    </header>
+
+    <br />
+
+    <main class="main">
+        <section>
+            <h2>Summer 2025 Courses</h2>
+            <table class="table" style="width:100%">
+                <tr>
+                    <th class="tableheaders" style="width:20%">Course Number</th>
+                    <th class="tableheaders" style="width:45%">Course Name</th>
+                    <th class="tableheaders" style="width:20%">Schedule Type</th>
+                    <th class="tableheaders" style="width:15%">Prerequisite</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="CS305" name="CS305" value="CS305" />
+                        <b>CS 305</b>
+                    </td>
+                    <td>
+                        <b>Concepts of Computer Programming</b>
+                    </td>
+                    <td>
+                        <b>DL</b>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="CS309/309L" name="CS309/309L" value="CS 309/309L" />
+                        <b>CS 309/309L</b>
+                    </td>
+                    <td>
+                        <b>Introduction to Digital Logic/Digital Design Lab</b>
+                    </td>
+                    <td>
+                        <b>DL</b>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="CS3010" name="CS310" value="CS 310" />
+                        <b>CS 310</b>
+                    </td>
+                    <td>
+                        <b>Professional Ethics of Computing</b>
+                    </td>
+                    <td>
+                        <b>DL</b>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="CS317" name="CS317" value="CS 317" />
+                        <b>CS 317</b>
+                    </td>
+                    <td>
+                        <b>Computer Science I</b>
+                    </td>
+                    <td>
+                        <b>DL</b>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="CS18" name="CS18" value="CS 318" />
+                        <b>CS 318</b>
+                    </td>
+                    <td>
+                        <b>Computer Science II</b>
+                    </td>
+                    <td>
+                        <b>SCN</b>
+                    </td>
+                    <td>
+                        <b>CS 317</b>
+                    </td>
+                </tr>
+            </table>
+            <button id="list-btn" class="btn">Semester</button>
+            <button id="filter-btn" class="btn">Next Semester</button>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Athens State University</p>
+    </footer>  
+</body>
+</html>

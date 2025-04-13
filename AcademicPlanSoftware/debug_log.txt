@@ -1,0 +1,117 @@
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ Skipping malformed row 14: CS472, Analysis of Algorithms, , SCN, , , SCN, "CS487, Robotics, , , , CN, , 
+✅ Successfully fetched courses
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+⚠ No data returned
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd
+connect.php script is running
+CSV Headers: courseNum, courseName, Fall_Odd, Spr_Even, Sum_Even, Fall_Even, Spr_Odd, Sum_Odd

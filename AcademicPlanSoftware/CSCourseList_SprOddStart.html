@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring 2027 Available Courses</title>              <!-- take out??-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        /* Page Layout */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #eef2f3;
+        }
+
+        h1 {
+            color: #0a3d62;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        p {
+            margin: 8px 0;
+        }
+
+        .top-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Flex container for the two columns */
+        .layout-row {
+            display: flex;
+            align-items: flex-start; /* top-align both columns */
+            gap: 20px;
+        }
+
+        /* Left Column: Course Selection */
+        .course-selection {
+            flex: 2;              
+            min-width: 600px;     
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Right Column: Semester Output */
+        #semester-container {
+            flex: 1;
+            min-height: 200px;
+        }
+
+        .semester-section {
+            margin-bottom: 20px;
+            background: #eaf6ff;
+            border-left: 5px solid #1e90ff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .semester-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #0a3d62;
+            margin-top: 0;
+            display: flex;       
+            align-items: center; 
+        }
+
+        .semester-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        /* Abbreviation Box */
+        .abbreviation-box {
+            background: #eaf6ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .abbreviation-box p {
+            margin: 10px 0;
+        }
+
+        .blue-box {
+            background-color: #1e3d8f; 
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: normal;
+        }
+        .red-box {
+            background-color: #9c1e1e; 
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: normal;
+        }
+        .green-box {
+            background-color: #1e8f3d; 
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: normal;
+        }
+        .purple-box {
+            background-color: #6f1e8f; 
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: normal;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #0a3d62;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        td:nth-child(1) {
+            white-space: nowrap;
+        }
+
+        .course-checkbox {
+            accent-color: #1e90ff;
+            transform: scale(1.2);
+            margin-right: 6px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #0a3d62, #1e90ff);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #1e90ff, #0a3d62);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .unavailable {
+            color: #666 !important;
+            background-color: #f0f0f0;
+        }
+        .unavailable input[type="checkbox"] {
+            cursor: not-allowed;
+        }
+        #data-container tr:not(.unavailable):hover {
+            background-color: #cce5ff;
+            transition: background-color 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .selected-course {
+            background-color: #c8f7c5 !important;
+        }
+        .selected-course label {
+            color: #1e8f3d !important;
+            font-weight: bold;
+        }
+        .selected-course .course-checkbox {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-container">
+    <h1>Spring 2027 Available Courses</h1>
+
+    <!-- Abbreviations Box -->
+    <div class="abbreviation-box">
+        <p>
+            <span class="blue-box"><strong>CD</strong></span> = On Campus Day 
+            | 
+            <span class="blue-box"><strong>CN</strong></span> = On Campus Night
+            |
+            <span class="red-box"><strong>DL</strong></span> = Distance Learning 
+            | 
+            <span class="red-box"><strong>DLC</strong></span> = Distance Learning w/ On-campus Exams
+        </p>
+        <p>
+            <span class="green-box"><strong>SCD</strong></span> = Synchronous DL w/ On-campus Meeting 
+            | 
+            <span class="green-box"><strong>SCN</strong></span> = Synchronous DL only 
+            | 
+            <span class="purple-box"><strong>BL</strong></span> = Blended
+        </p>
+    </div>
+
+    <div class="layout-row">
+        <!-- Left column: Course selection area -->
+        <div class="course-selection">
+            <p>Select courses and submit to generate your course plan.</p>
+
+            <!-- The semester prompt that will be updated each time -->
+            <h2 id="semester-prompt" style="font-size: 1.3em; margin-top: 15px; text-align: center;"></h2>
+
+            <form id="course-form">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Courses</th>
+                        <th>Class Type</th>
+                    </tr>
+                    </thead>
+                    <tbody id="data-container"></tbody>
+                </table>
+                <input type="submit" class="submit-btn" value="Submit">
+            </form>
+        </div>
+
+        <!-- Right column: Semester output -->
+        <div id="semester-container"></div>
+    </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+
+      /***********************************************
+       *   Prerequisite Definitions (in JS)
+       ***********************************************/
+      const prerequisites = {
+          ITE327:  ['CS317'],
+          CS318:   ['CS317'],
+          CS372:   ['CS318'],
+          CS340:   ['CS309','CS318'],
+          CS414:   ['CS372'],
+          CS415:   ['CS340','CS372'],
+          CS417:   ['CS372'],
+          CS451:   ['CS372'],
+          CS472:   ['CS372'],
+          CS452:   ['CS414','CS415','CS451','CS472']
+      };
+
+      // The four courses that are immediately selectable
+      const startingCourses = ['CS309','CS310','CS317', 'Elective1'];
+
+      // Keep track of which courses have been chosen
+      let selectedItems = [];
+
+      // Will track how many total courses we have in the DB
+      let totalCourseCount = 0;  // <-- ADDED
+
+      // We'll treat "spring" as semester index 0
+      let currentSemesterIndex = 0;
+      
+      /**
+       * Dynamically generate “Spring 2027,” “Summer 2027,” "Fall 2027" etc.
+       */
+      function getSemesterName(i) {
+          const baseYear = 2027;  // starting year
+          const cycle = i % 3;    // 0 => Spring, 1 => Summer, 2 => Fall
+          const offset = Math.floor(i / 3);
+          let year = baseYear + offset;
+          let season = '';
+      
+          if (cycle === 0) {
+              season = 'Spring';
+          } else if (cycle === 1) {
+              season = 'Summer';
+          } else {
+              season = 'Fall';
+              year++; 
+          }
+      
+          return season + ' ' + year;
+      }
+
+      // Each course’s earliest semester index
+      const earliestSemesterFor = {
+          'Elective1': 0,
+          'CS309': 0,
+          'CS310': 0,
+          'CS317': 0,
+          'Elective2': 1,
+          'CS318': 1,
+          'Elective3': 2,
+          'CS340': 2,
+          'CS372': 2,
+          'Elective4': 3,
+          'CS415': 3,
+          'CS452': 4,
+          'Elective5': 4
+      };
+
+      function prereqsMet(courseCode) {
+        const reqs = prerequisites[courseCode] || [];
+        return reqs.every(r => selectedItems.includes(r));
+      }
+
+      function semesterAvailable(courseCode) {
+        const needed = earliestSemesterFor[courseCode] || 0;
+        return (currentSemesterIndex >= needed);
+      }
+
+      function canTakeCourse(courseCode) {
+        // If already chosen, no
+        if (selectedItems.includes(courseCode)) return false;
+        // Must meet prereqs and be in or past earliest semester
+        return (semesterAvailable(courseCode) && prereqsMet(courseCode));
+      }
+
+      const classTypeMap = {
+        'CD':  'blue-box',
+        'CN':  'blue-box',
+        'DL':  'red-box',
+        'DLC': 'red-box',
+        'SCD': 'green-box',
+        'SCN': 'green-box',
+        'BL':  'purple-box'
+      };
+
+      function styleClassType(ct) {
+        const upper = ct.toUpperCase().trim();
+        return classTypeMap[upper]
+          ? `<span class="${classTypeMap[upper]}">${upper}</span>`
+          : ct;
+      }
+
+      const semesterIcons = {
+        'Summer': 'sun.png',
+        'Fall':   'leaf.png',
+        'Spring': 'flower.png'
+      };
+
+      function getSemesterIcon(semesterName) {
+        const [season] = semesterName.split(" ");
+        return semesterIcons[season] || '';
+      }
+
+      // For mapping from currentSemesterIndex to the CSV columns
+      const semesterDataAttr = ["sprOdd", "sumOdd", "fallOdd", "sprEven", "sumEven", "fallEven"];
+
+      $.ajax({
+        url: 'connect.php',
+        type: 'GET',
+        data: { allCourses: '1' },
+        dataType: 'json',
+        success: function (courses) {
+          let container = $('#data-container');
+          container.empty();
+
+          // Store total number of courses
+          totalCourseCount = courses.length;  // <-- ADDED
+
+          // Build a table row for each returned course
+          $.each(courses, function (idx, course) {
+            const courseCode = course.courseNum.split('/')[0].trim();
+            const rowID      = 'row-' + courseCode;
+            const styledCT   = styleClassType(course.classType);
+
+            let row = `
+              <tr id="${rowID}" data-course="${courseCode}" 
+              data-spr-even="${course.Spr_Even}" 
+              data-sum-even="${course.Sum_Even}" 
+              data-fall-even="${course.Fall_Even}" 
+              data-spr-odd="${course.Spr_Odd}"
+              data-sum-odd="${course.Sum_Odd}"
+              data-fall-odd="${course.Fall_Odd}"> 
+                <td>
+                  <input type="checkbox" class="course-checkbox"
+                         name="selectedCourses[]"
+                         value="${courseCode}">
+                  <label>${course.courseNum} - ${course.courseName}</label>
+                </td>
+                <td>${styledCT}</td>
+              </tr>
+            `;
+            container.append(row);
+          });
+
+          // Immediately update row states: grey out or enable
+          updateCourseRows();
+        },
+        error: function () {
+          alert('Could not load course data.');
+        }
+      });
+
+      function updateCourseRows() {
+        $('#data-container tr').each(function(){
+          const courseCode = $(this).attr('data-course');
+
+          // If it's already selected, mark green
+          if (selectedItems.includes(courseCode)) {
+            $(this).addClass('selected-course').removeClass('unavailable');
+            return;
+          }
+
+          // Decide if this course is enabled
+          let isEnabled = (currentSemesterIndex === 0 && startingCourses.includes(courseCode)) 
+                          ? true 
+                          : canTakeCourse(courseCode);
+
+          // Check the CSV column for the current semester
+          let dataAttr = semesterDataAttr[currentSemesterIndex];
+          if (dataAttr) {
+            let valueForThisSemester = $(this).data(dataAttr);
+            if (!valueForThisSemester || ('' + valueForThisSemester).toLowerCase() === 'null') {
+              isEnabled = false;
+            }
+          }
+
+          if (isEnabled) {
+            $(this).removeClass('unavailable');
+            $(this).find('input[type="checkbox"]').prop('disabled', false);
+          } else {
+            $(this).addClass('unavailable');
+            $(this).find('input[type="checkbox"]')
+                   .prop('checked', false)
+                   .prop('disabled', true);
+          }
+        });
+      }
+
+      $('#course-form').submit(function(e){
+        e.preventDefault();
+
+        // Find which courses are newly selected
+        let newlySelected = [];
+        $('#data-container tr').each(function(){
+          const courseCode = $(this).attr('data-course');
+          const checkbox   = $(this).find('input[type="checkbox"]');
+          if (checkbox.is(':checked') && !selectedItems.includes(courseCode)) {
+            newlySelected.push(courseCode);
+          }
+        });
+
+        if (newlySelected.length > 0) {
+          // Add them to selectedItems
+          selectedItems = selectedItems.concat(newlySelected);
+
+          // Build the semester section with icon
+          let semesterName = getSemesterName(currentSemesterIndex);
+          let iconPath = getSemesterIcon(semesterName);
+          
+          let html = `
+            <div class="semester-section">
+              <h4 class="semester-title">
+                ${iconPath ? `<img src="${iconPath}" alt="${semesterName} icon" class="semester-icon">` : ''}
+                ${semesterName}
+              </h4>
+          `;
+          
+          newlySelected.forEach(code => {
+            const row = $('#row-'+code);
+            const labelText = row.find('label').text();
+            const classType = row.find('td:last').html();
+            html += `<p>${labelText} ${classType}</p>`;
+          });
+          html += `</div>`;
+
+          $('#semester-container').append(html);
+
+          // Advance to the next semester
+          currentSemesterIndex++;
+          // Re-check row states
+          updateCourseRows();
+
+          // Now decide whether all courses are chosen
+          if (selectedItems.length === totalCourseCount) {
+            // All courses selected
+            $('#semester-prompt').text("You’re all set!");
+          } else {
+            // Otherwise, prompt for the next semester
+            $('#semester-prompt').text("Select courses for " + getSemesterName(currentSemesterIndex));
+          }
+
+        } else {
+          alert('No new courses selected or none are available.');
+        }
+      });
+
+      // Make the entire row clickable if not unavailable
+      $('#data-container').on('click', 'tr:not(.unavailable)', function(e) {
+        if (!$(e.target).is('input[type="checkbox"]')) {
+          const checkbox = $(this).find('input[type="checkbox"]');
+          checkbox.prop('checked', !checkbox.prop('checked'));
+        }
+      });
+
+      // Set the initial prompt for Fall 2025
+      $('#semester-prompt').text("Select courses for " + getSemesterName(currentSemesterIndex));
+
+  });
+</script>
+
+</body>
+</html>

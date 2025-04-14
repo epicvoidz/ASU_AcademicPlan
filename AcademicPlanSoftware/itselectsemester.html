@@ -360,16 +360,17 @@
       }
   
       const prerequisites = {
-                    ITE327: ['CS317'],
-                    ITE441: ['ITE321'],
-                    ITE450: ['CS307', 'CS318'],
-                    ITE451: ['CS372', 'MA308'],
-                    ITE452: ['ITE451', 'MA308', 'ITE321', 'ITE327', 'ITE450'],
-                    CS318: ['CS317'],
-                    CS380: ['ITE327'],
-                    CS385: ['CS317'],
-                    UNV400: ['UNV300']
-                };
+  ITE327: ['CS317'],
+  ITE441: ['ITE321'],
+  ITE450: ['CS307', 'CS318'],
+  ITE451: ['CS372', 'MA308'],
+  ITE452: ['ITE451', 'MA308', 'ITE321', 'ITE327', 'ITE450'],
+  CS318: ['CS317'],
+  CS372: ['CS318'],      
+  CS380: ['ITE327'],
+  CS385: ['CS317'],
+  UNV400: ['UNV300']
+};
 
                 const startingCourses = ['CS307', 'CS309', 'CS310', 'CS317', 'UNV300', 'Elective1'];
 
@@ -397,6 +398,7 @@
                     'ITE327': 1,
                     'Elective3': 2,
                     'ITE313': 2,
+                    'CS372': 2,
                     'CS307': 2,
                     'ITE441': 2,
                     'ITE450': 2,
@@ -427,6 +429,7 @@
                     'ITE327': 1,
                     'Elective3': 2,
                     'ITE313': 2,
+                    'CS372': 2,
                     'CS307': 2,
                     'ITE441': 2,
                     'ITE450': 2,
@@ -457,6 +460,7 @@
                     'ITE327': 1,
                     'Elective3': 2,
                     'ITE313': 2,
+                    'CS372': 2,
                     'CS307': 2,
                     'ITE441': 2,
                     'ITE450': 2,
@@ -487,6 +491,7 @@
                     'ITE327': 1,
                     'Elective3': 2,
                     'ITE313': 2,
+                    'CS372': 2,
                     'CS307': 2,
                     'ITE441': 2,
                     'ITE450': 2,
@@ -517,6 +522,7 @@
                     'ITE327': 1,
                     'Elective3': 2,
                     'ITE313': 2,
+                    'CS372': 2,
                     'CS307': 2,
                     'ITE441': 2,
                     'ITE450': 2,
@@ -547,6 +553,7 @@
                     'ITE327': 1,
                     'Elective3': 2,
                     'ITE313': 2,
+                    'CS372': 2,
                     'CS307': 2,
                     'ITE441': 2,
                     'ITE450': 2,
@@ -559,7 +566,7 @@
                     'CS385': 4,
                     'ITE452': 4
                   };
-                  semesterDataAttr - ["sprOdd", "sumodd", "fallOdd", "sprEven", "sumEven", "fallEven"];
+                  semesterDataAttr = ["sprOdd", "sumOdd", "fallOdd", "sprEven", "sumEven", "fallEven"];
                   connectParam = "SpringOdd";
                 }
   
@@ -732,12 +739,14 @@ else if (semParam === 'FallEven') {
     totalCourseCount = courses.length;
 
     const creditMap = {
-      'MA308': 3, 'MA310': 3, 'CS309': 4, 'CS307': 3,
-      'CS310': 1, 'CS317': 3, 'CS318': 3, 'CS340': 3, 'CS372': 3,
-      'CS414': 3, 'CS415': 3, 'ITE451': 3, 'ITE452': 3, 'CS472': 3,
-      'ITE305': 4, 'ITE327': 4, 'ITE420': 3,
-      'Elective1': 3, 'Elective2': 3, 'Elective3': 3, 'Elective4': 3, 'Elective5': 3
-    };
+  'MA308': 3, 'MA310': 3, 'MA321': 3, 'MA331': 3, 'CS309': 4,
+  'CS310': 1, 'CS317': 3, 'CS318': 3, 'CS340': 3, 'CS372': 3,
+  'CS414': 3, 'CS415': 3, 'CS451': 3, 'CS452': 3, 'CS472': 3,
+  'CS307': 3, 'ITE313': 3, 'ITE315': 3, 'ITE321': 3, 'ITE327': 4,
+  'ITE350': 3, 'ITE420': 3, 'ITE450': 3, 'ITE451': 3, 'ITE452': 3,
+  'Elective1': 3, 'Elective2': 3, 'Elective3': 3, 'Elective4': 3, 'Elective5': 3
+};
+
 
     $.each(courses, function (idx, course) {
       const courseCode = course.courseNum.split('/')[0].trim();

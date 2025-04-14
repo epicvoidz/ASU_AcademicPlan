@@ -60,7 +60,7 @@ $allowed_courses = [
     'CS307', 'CS309', 'CS310', 'CS317', 'CS318',
     'CS380', 'CS385', 'MA308', 'ITE313', 'ITE315',
     'ITE321', 'ITE327', 'ITE350', 'ITE441', 'ITE450',
-    'CS451', 'CS452', 'UNV300', 'UNV400', 'Elective1', 
+    'ITE451', 'ITE452', 'UNV300', 'UNV400', 'Elective1', 
     'Elective2', 'Elective3', 'Elective4', 'Elective5',
 ];
 

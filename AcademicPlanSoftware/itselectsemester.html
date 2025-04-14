@@ -286,7 +286,6 @@
 </div>
 <div class="hidden-course-section" id="main-content">
 <div class="top-container">
-<h1 id="mainHeading">Placeholder Title</h1>
 <div class="layout-row">
   <div class="course-selection">
     <p>Select courses and submit to generate your course plan.</p>
@@ -412,8 +411,6 @@
                   };
                   semesterDataAttr = ["sumOdd", "fallOdd", "sprEven", "sumEven", "fallEven", "sprOdd" ];
                   connectParam = "SumOdd";
-                  document.title = "Summer 2025 Available Courses";
-                  $('#mainHeading').html("<strong>Summer 2025 Available Courses</strong>");
                 } else if (semParam === "FallOdd") {
                   earliestSemesterFor = {
                     'Elective1': 0,
@@ -444,8 +441,6 @@
                   };
                   semesterDataAttr = ["fallOdd", "sprEven", "sumEven", "fallEven", "sprOdd", "sumOdd"];
                   connectParam = "FallOdd";
-                  document.title = "Fall 2025 Available Courses";
-                  $('#mainHeading').html("<strong>Fall 2025 Available Courses</strong>");
                 }  else if (semParam === 'SprEven') {
                   earliestSemesterFor = {
                     'Elective1': 0,
@@ -476,8 +471,6 @@
                   };
                   semesterDataAttr = ["sprEven", "sumEven", "fallEven", "sprOdd", "sumOdd", "fallOdd"]
                   connectParam = "SprEven";
-                  document.title = "Spring 2026 Available Courses";
-                  $('#mainHeading').html("<strong>Spring 2026 Available Courses</strong>");
                 } else if (semParam === 'SumEven') {
                   earliestSemesterFor = {
                     'Elective1': 0,
@@ -508,8 +501,6 @@
                   };
                   semesterDataAttr = ["sumEven", "fallEven", "sprOdd", "sumOdd", "fallOdd", "sprEven"];
                   connectParam = "SummerEven";
-                  document.title = "Summer 2026 Available Courses";
-                  $('#mainHeading').html("<strong>Summer 2026 Available Courses</strong>");
                 } else if (semParam === 'FallEven') {
                   earliestSemesterFor = {
                     'Elective1': 0,
@@ -540,8 +531,6 @@
                   };
                   semesterDataAttr = ["fallEven", "sprOdd", "sumOdd", "fallOdd", "sprEven",  "sumEven"];
                   connectParam = "FallEven";
-                  document.title = "Fall 2026 Available Courses";
-                  $('#mainHeading').html("<strong>Fall 2026 Available Courses</strong>");
                 } else if (semParam === 'SprOdd') {
                   earliestSemesterFor = {
                     'Elective1': 0,
@@ -572,8 +561,6 @@
                   };
                   semesterDataAttr - ["sprOdd", "sumodd", "fallOdd", "sprEven", "sumEven", "fallEven"];
                   connectParam = "SpringOdd";
-                  document.title = "Spring 2027 Available Courses";
-                  $('#mainHeading').html("<strong>Spring 2027 Available Courses</strong>");
                 }
   
       function getSemesterName(i) {

@@ -11,225 +11,224 @@
       line-height: 1.6;
       color: #333;
     }
-    
-  .header {
-  padding: 10px; 
-  text-align: center;
-  background: #092a6d;
-  color: white;
-} 
 
-.header h1 {
-  font-size: 5vw; 
-}
+    .header {
+      padding: 10px;
+      text-align: center;
+      background: #092a6d;
+      color: white;
+    }
 
-.header p {
-  font-size: 3vw; 
-}
+    .header h1 {
+      font-size: 5vw;
+    }
 
-.banner {
-  background: linear-gradient(135deg, #092a6d, #4c7baf);
-  color: white;
-  text-align: center;
-  padding: 4vw 2vw; 
-  font-size: 3vw; 
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5vw; 
-  margin-bottom: 4vw; 
-  box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.2); 
-  position: relative;
-  overflow: hidden;
-}
+    .header p {
+      font-size: 3vw;
+    }
 
-.banner::before {
-  content: "";
-  position: absolute;
-  top: -3vw; 
-  left: -3vw;
-  right: -3vw;
-  bottom: -3vw;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
-  z-index: -1;
-  transform: rotate(-5deg);
-}
+    .banner {
+      background: linear-gradient(135deg, #092a6d, #4c7baf);
+      color: white;
+      text-align: center;
+      padding: 1vw 1vw;
+      font-size: 1.6vw;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.3vw;
+      margin-bottom: 2vw;
+      box-shadow: 0 0.3vw 1vw rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
 
-.banner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  z-index: -1;
-}
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: -1.5vw;
+      left: -1.5vw;
+      right: -1.5vw;
+      bottom: -1.5vw;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+      z-index: -1;
+      transform: rotate(-5deg);
+    }
 
-.main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  justify-items: center;
-}
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: -1;
+    }
 
-.main section {
-  background: white;
-  border-radius: 5px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease; 
-}
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+      justify-items: center;
+    }
 
-.main section:hover {
-  transform: translateY(-10px);
-}
+    .main section {
+      background: white;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-.main h2 {
-  font-size: 2.5vw; 
-  color: #092a6d;
-  margin-bottom: 10px;
-}
+    .main section:hover {
+      transform: translateY(-10px);
+    }
 
-.main p {
-  font-size: 2vw; 
-}
+    .main h2 {
+      font-size: 2.5vw;
+      color: #092a6d;
+      margin-bottom: 10px;
+    }
 
-.main img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
+    .main p {
+      font-size: 2vw;
+    }
 
-fieldset {
-  font-size: 1.8vw;
-}
+    .main img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
 
-.footer {
-  text-align: center;
-  padding: 2vw 0; 
-  background: linear-gradient(135deg, #ddd, #bbb);
-  margin-top: 3vw; 
-  font-size: 2vw; 
-}
+    fieldset {
+      font-size: 1.8vw;
+    }
 
-.logo-img {
-  width: 150px;
-  height: 150px;
-  min-width: 150px;
-  min-height: 150px;
-}
-body.colorblind-mode {
-  background: #fdf6e3 !important;
-  color: #000 !important;
-}
+    .footer {
+      text-align: center;
+      padding: 1px;
+      background: linear-gradient(135deg, #ddd, #bbb);
+      margin-top: 3vw;
+      font-size: 2vw;
+    }
 
-.colorblind-mode .header,
-.colorblind-mode .banner,
-.colorblind-mode .footer {
-  background: #444 !important;
-  color: #fff !important;
-}
+    .logo-img {
+      width: 150px;
+      height: 150px;
+      min-width: 150px;
+      min-height: 150px;
+    }
 
-.colorblind-mode .main section,
-.colorblind-mode .construction-text {
-  background-color: #e0e0e0 !important;
-  box-shadow: none !important;
-}
+    body.colorblind-mode {
+      background: #fdf6e3 !important;
+      color: #000 !important;
+    }
 
-.colorblind-toggle {
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  z-index: 999;
-  background: linear-gradient(135deg, #0cc238, #1e8f3d);
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 1vw;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .colorblind-mode .header,
+    .colorblind-mode .banner,
+    .colorblind-mode .footer {
+      background: #444 !important;
+      color: #fff !important;
+    }
 
+    .colorblind-mode .main section,
+    .colorblind-mode .construction-text {
+      background-color: #e0e0e0 !important;
+      box-shadow: none !important;
+    }
+
+    .colorblind-toggle {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      z-index: 999;
+      background: linear-gradient(135deg, #0cc238, #1e8f3d);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 1vw;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+  <header class="header">
+    <div class="colorblind-toggle">
+      <label>
+        <input type="checkbox" id="toggleColorblindMode">
+        Color Blind Mode
+      </label>
+    </div>
+    <h1>Welcome to Athens State University</h1>
+    <p>Map out your academic journey here!</p>
+    <img src="ASU logo.png" class="logo-img">
+  </header>
 
-<header class="header">
-  <div class="colorblind-toggle">
-    <label>
-      <input type="checkbox" id="toggleColorblindMode">
-      Color Blind Mode
-    </label>
-  </div>
-  
-  <h1>Welcome to Athens State University</h1>
-  <p>Map out your academic journey here!</p>
-  <img src="ASU logo.png" class="logo-img">
-</header>
+  <div class="banner">Start your life changing journey today</div>
 
-<div class="banner">Start your life changing journey today</div>
-<fieldset style="border: 2px solid #ccc; padding: 10px; margin: 10px;">
-  <legend>Disclaimer</legend>
-  <p>
-    Students using this application acknowledge and understand that it assumes they have successfully completed all prerequisite courses leading up to the major-specific coursework. This application's functionality and results are based on this assumption. Any discrepancies or inaccuracies may arise if prerequisite coursework has not been completed.
-  </p>
-</fieldset>
-<main class="main"> 
+  <fieldset style="border: 2px solid #ccc; padding: 10px; margin: 10px;">
+    <legend>Disclaimer</legend>
+    <p>
+      Students using this application acknowledge and understand that it assumes they have successfully completed all prerequisite courses leading up to the major-specific coursework. This application's functionality and results are based on this assumption. Any discrepancies or inaccuracies may arise if prerequisite coursework has not been completed.
+    </p>
+  </fieldset>
 
-  <section>  
-    <h2>College of Education</h2>
-    <a href="education.html">
-      <img src="edulogo.png" alt="Business"> 
-    </a>
-    <p>Empowering educators of tomorrow to teach the upcoming and future generations!</p>
-  </section>
-  
-<section>  
-    <h2>College of Business</h2>
-    <a href="business.html">
-      <img src="businesslogo.png" alt="Business"> 
-    </a>
-    <p>Developing the business skills to succeed in a global economy.</p>
-  </section>
+  <main class="main">
+    <section>
+      <h2>College of Education</h2>
+      <a href="education.html">
+        <img src="edulogo.png" alt="Education">
+      </a>
+      <p>Empowering educators of tomorrow to teach the upcoming and future generations!</p>
+    </section>
 
-  <section>
-    <h2>College of Arts and Sciences</h2>  
-    <a href="artsandsciences.html">
-      <img src="artssci.png" alt="Arts and Sciences">
-    </a>
-    <p>Exploring mathematics, humanities, computer science, social science, and natural science.</p>
-  </section>
-</main>
+    <section>
+      <h2>College of Business</h2>
+      <a href="business.html">
+        <img src="businesslogo.png" alt="Business">
+      </a>
+      <p>Developing the business skills to succeed in a global economy.</p>
+    </section>
 
-<footer class="footer">
-  <p>&copy; 2025 Athens State University</p>
-</footer>
-</body>
-<script>
-  const checkbox = document.getElementById('toggleColorblindMode');
+    <section>
+      <h2>College of Arts and Sciences</h2>
+      <a href="artsandsciences.html">
+        <img src="artssci.png" alt="Arts and Sciences">
+      </a>
+      <p>Exploring mathematics, humanities, computer science, social science, and natural science.</p>
+    </section>
+  </main>
 
-  function applyColorMode() {
-    if (localStorage.getItem('colorblindMode') === 'true') {
-      document.body.classList.add('colorblind-mode');
-      checkbox.checked = true;
-    } else {
-      document.body.classList.remove('colorblind-mode');
-      checkbox.checked = false;
+  <footer class="footer">
+    <p>&copy; 2025 Athens State University</p>
+  </footer>
+
+  <script>
+    const checkbox = document.getElementById('toggleColorblindMode');
+
+    function applyColorMode() {
+      if (localStorage.getItem('colorblindMode') === 'true') {
+        document.body.classList.add('colorblind-mode');
+        checkbox.checked = true;
+      } else {
+        document.body.classList.remove('colorblind-mode');
+        checkbox.checked = false;
+      }
     }
-  }
 
-  if (checkbox) {
-    checkbox.addEventListener('change', () => {
-      localStorage.setItem('colorblindMode', checkbox.checked);
-      applyColorMode();
-    });
-    window.addEventListener('DOMContentLoaded', applyColorMode);
-  }
-</script>
-
+    if (checkbox) {
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem('colorblindMode', checkbox.checked);
+        applyColorMode();
+      });
+      window.addEventListener('DOMContentLoaded', applyColorMode);
+    }
+  </script>
+</body>
 </html>

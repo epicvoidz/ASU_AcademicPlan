@@ -80,14 +80,36 @@
 
     .footer {
       text-align: center;
-      padding: 2vw 6; 
+      padding: 1px;
       background: linear-gradient(135deg, #ddd, #bbb);
-      margin-top: 3vw; 
-      font-size: 0.5vw; 
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      margin-top: 3vw;
+      font-size: 2vw;
     }
+    .banner {
+  background: linear-gradient(135deg, #092a6d, #4c7baf);
+  color: white;
+  text-align: center;
+  padding: 1vw 1vw;
+  font-size: 1.6vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3vw;
+  margin-bottom: 2vw;
+  box-shadow: 0 0.3vw 1vw rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: -1.5vw;
+  left: -1.5vw;
+  right: -1.5vw;
+  bottom: -1.5vw;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+  z-index: -1;
+  transform: rotate(-5deg);
+}
     body.colorblind-mode {
   background: #fdf6e3 !important;
   color: #000 !important;
@@ -133,7 +155,7 @@
   
   <h1>Athens State University</h1>
   <p>Building the future of education</p>
-  <img src="ASU logo.png" style="width:250px;height:250px">
+  <img src="ASU logo.png" style="width:150px;height:150px">
 </header>
 
 <div class="construction-container">

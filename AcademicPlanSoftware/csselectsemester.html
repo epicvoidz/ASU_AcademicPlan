@@ -263,6 +263,7 @@
     .hidden-course-section {
       display: none;
     }
+    
 
     .logo-img {
   width: 150px;
@@ -270,6 +271,7 @@
   min-width: 150px;
   min-height: 150px;
 }
+
 body.colorblind-mode {
   background: #fdf6e3 !important;
   color: #000 !important;
@@ -301,7 +303,13 @@ body.colorblind-mode {
   font-weight: bold;
   cursor: pointer;
 }
-
+.footer {
+      text-align: center;
+      padding: 1px;
+      background: linear-gradient(135deg, #ddd, #bbb);
+      margin-top: 3vw;
+      font-size: 2vw;
+    }
   </style>
 </head>
 
@@ -377,10 +385,13 @@ body.colorblind-mode {
               </div>
         </form>
         </div>
-        <div id="semester-container"></div>
-      </div>
+        <div id="semester-container" style="flex: 1; min-height: 200px;">
+        </div>
     </div>
   </div>
+  <footer class="footer">
+    <p>&copy; 2025 Athens State University</p>
+  </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const urlParams = new URLSearchParams(window.location.search);

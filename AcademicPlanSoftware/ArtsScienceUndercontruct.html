@@ -88,11 +88,49 @@
       bottom: 0;
       width: 100%;
     }
+    body.colorblind-mode {
+  background: #fdf6e3 !important;
+  color: #000 !important;
+}
+
+.colorblind-mode .header,
+.colorblind-mode .banner,
+.colorblind-mode .footer {
+  background: #444 !important;
+  color: #fff !important;
+}
+
+.colorblind-mode .main section,
+.colorblind-mode .construction-text {
+  background-color: #e0e0e0 !important;
+  box-shadow: none !important;
+}
+
+.colorblind-toggle {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 999;
+  background: linear-gradient(135deg, #0cc238, #1e8f3d);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 1vw;
+  font-weight: bold;
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
 
 <header class="header">
+  <div class="colorblind-toggle">
+    <label>
+      <input type="checkbox" id="toggleColorblindMode">
+      Color Blind Mode
+    </label>
+  </div>
+  
   <h1>Athens State University</h1>
   <p>Building the future of education</p>
   <img src="ASU logo.png" style="width:250px;height:250px">
@@ -112,6 +150,27 @@
 <footer class="footer">
   <p>&copy; 2025 Athens State University</p>
 </footer>
+<script>
+  const checkbox = document.getElementById('toggleColorblindMode');
+
+  function applyColorMode() {
+    if (localStorage.getItem('colorblindMode') === 'true') {
+      document.body.classList.add('colorblind-mode');
+      checkbox.checked = true;
+    } else {
+      document.body.classList.remove('colorblind-mode');
+      checkbox.checked = false;
+    }
+  }
+
+  if (checkbox) {
+    checkbox.addEventListener('change', () => {
+      localStorage.setItem('colorblindMode', checkbox.checked);
+      applyColorMode();
+    });
+    window.addEventListener('DOMContentLoaded', applyColorMode);
+  }
+</script>
 
 </body>
 </html>

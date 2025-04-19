@@ -4,7 +4,6 @@ ini_set('display_errors', 1);
 
 header('Content-Type: application/json');
 
-// List of allowed course codes
 $allowed_courses = [
     'CS309', 'CS317', 'CS310', 'CS318', 
     'CS340', 'CS372', 'ITE327', 'CS414', 'CS417', 
@@ -12,44 +11,44 @@ $allowed_courses = [
     'Elective1', 'Elective2', 'Elective3', 'Elective4', 'Elective5', 'UNV300', 'UNV400'
 ];
 
-$csvData = []; 
+$csvData = [];
+$useCSV = false;
 
 $mysqli = new mysqli("localhost", "root", "", "cs_ite_ma_db", 3307);
 
 if ($mysqli->connect_error) {
-    // fallback to CSV
-    if (($handle = fopen("cs_ite_ma_courses.csv", "r")) !== FALSE) {
-        $headers = fgetcsv($handle); 
-        while (($data = fgetcsv($handle)) !== FALSE) {
-            $csvData[] = array_combine($headers, $data);
-        }
-        fclose($handle);
-    } else {
-        echo json_encode(['error' => 'Database connection failed and CSV fallback file not found.']);
-        exit;
-    }
+    $useCSV = true;
 } else {
     $query = "SELECT * FROM cs_ite_ma_courses";
     $result = $mysqli->query($query);
-
+    
     if ($result) {
         while ($row = $result->fetch_assoc()) {
             $csvData[] = $row;
         }
     } else {
-        if (($handle = fopen("cs_ite_ma_courses.csv", "r")) !== FALSE) {
-            $headers = fgetcsv($handle); 
-            while (($data = fgetcsv($handle)) !== FALSE) {
+        $useCSV = true;
+    }
+    $mysqli->close();
+}
+
+// Load CSV if fallback needed
+if ($useCSV) {
+    $dataFile = "cs_ite_ma_courses.csv";
+    if (file_exists($dataFile)) {
+        $rawData = array_map('str_getcsv', file($dataFile));
+        array_shift($rawData); 
+        $headers = array_shift($rawData); 
+        $headers[0] = preg_replace('/^\xEF\xBB\xBF/', '', $headers[0]); 
+        foreach ($rawData as $data) {
+            if (count($data) === count($headers)) {
                 $csvData[] = array_combine($headers, $data);
             }
-            fclose($handle);
-        } else {
-            echo json_encode(['error' => 'Query failed and CSV fallback file not found.']);
-            exit;
         }
+    } else {
+        echo json_encode(['error' => 'Database failed and CSV file not found.']);
+        exit;
     }
-
-    $mysqli->close();
 }
 
 if (isset($_GET['allCourses'])) {
@@ -65,8 +64,8 @@ if (isset($_GET['allCourses'])) {
         $classType = '';
         if (!empty($rowData['classType'])) {
             $classType = $rowData['classType'];
-        } elseif (!empty($rowData['Sum_Odd'])) {
-            $classType = $rowData['Sum_Odd'];
+        } elseif (!empty($rowData[$semester])) {
+            $classType = $rowData[$semester];
         } else {
             $classType = 'DL';
         }
@@ -75,12 +74,12 @@ if (isset($_GET['allCourses'])) {
             'courseNum'  => $courseNum,
             'courseName' => $rowData['courseName'],
             'classType'  => $classType,
-            'Sum_Odd'    => $rowData['Sum_Odd'],
-            'Fall_Odd'   => $rowData['Fall_Odd'],
-            'Spr_Even'   => $rowData['Spr_Even'],
-            'Sum_Even'   => $rowData['Sum_Even'],
-            'Fall_Even'  => $rowData['Fall_Even'],
-            'Spr_Odd'    => $rowData['Spr_Odd']
+            'Sum_Odd'    => $rowData['Sum_Odd'] ?? '',
+            'Fall_Odd'   => $rowData['Fall_Odd'] ?? '',
+            'Spr_Even'   => $rowData['Spr_Even'] ?? '',
+            'Sum_Even'   => $rowData['Sum_Even'] ?? '',
+            'Fall_Even'  => $rowData['Fall_Even'] ?? '',
+            'Spr_Odd'    => $rowData['Spr_Odd'] ?? ''
         ];
     }
 

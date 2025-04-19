@@ -1,64 +1,71 @@
-courseNum,courseName,Fall_Odd,Spr_Even,Sum_Even,Fall_Even,Spr_Odd,Sum_Odd
-CS307,Foundations of Web Development,,DL,,,DL,
-CS309/CS309L,Introduction to Digital Logic Design/Digital Design Lab,CN,CD,DL,CN,CD,DL
-CS310,Professional Ethics of Computing,DL,DL,DL,DL,DL,DL
-CS317,Computer Science I,SCN,SCD,DL,SCN,SCD,DL
-CS318,Computer Science II,SCN,SND,SCN,SCD,SCN,SCN
-CS340,Introduction to Assembly Language and Computer Organization,,CD,CD,,CD,CD
-CS365/ITE365,Visual Application Development,DL,,,DL,,
-CS367/ITE367,Enterprise Appliccation Development,,,,,CN,
-CS372,Data Structures (Computer Science III),SCN,SCD,SCN,SCD,SCN,SCN
-CS380,Programming for the Web,,,BL,,,BL
-CS382/ITE382,Mobile Device Software Development,,CN,,,CN,
-CS385,Pragmatic Artificial Intelligence â€“ Cloud Based Machine Learning,,,,DL,,
-CS409,Computer Organization and Architecture,CN,,,CN,,
-CS414,Programming Language,CD,,,CN,,
-CS415,Operating Systems,,SCN,,,SCD,
-CS417,Topics in Object Oriented Programming,SCN,,,SCD,,
-CS418,Advanced Object Oriented Applications,,,,,,
-CS423,Computer Graphics/Game Design,CN,,,,,
-CS451,Software Engineering,DL,,DL,DL,,DL
-CS452/CS452L,Senior Software Engineering Project/SSEP Lab,BL,BL,,BL,BL,
-CS454,System Security Management,,,DL,,,DL
-CS462,Directed Study/Special Computer Science Project,,,,,,
-CS472,Analysis of Algorithms,,SCN,,,SCN,
-CS474,Introduction to Formal Language Theory,,,,,,
-CS475,Introduction to the Theory of Computing,,,SCD,,,
-CS484,Applied Cryptography and System Security,DL,,,DL,,
-CS485,Modern Artificial Intelligence,,,,,,SCN
-CS486,Natural Language Processing,,,,,,SCN
-CS487,Robotics,,,,CN,,
-CS488,"AI Reasoning, Decisions, and Learning",,,,,,
-CS489,Soft Computing and Fuzzy Logic,,,,,,
-ITE301,Problem Solving with Computers,DL,DL,DL,DL,DL,DL
-ITE305,Networking Fundamentals,CN,,CN,CN,,CN
-ITE306,Local Area Networks,CN,,CN,CN,,CN
-ITE307,Wide Area Networks,,CN,,,CN,
-ITE308,Network Architectures,,CN,,,CN,
-ITE313,Data Analysis & Visualization,,DL,,,DL,
-ITE315,Scripting Languages and System Administration,,,CN,,,DL
-ITE321,System Analysis & Design,DL,,,DL,,
-ITE327/ITE327L,Database Systems/Database Systems Lab,CN,,DL,CN,,DL
-ITE350,UX Design,,,DL,,,DL
-ITE365/CS365,Visual Application Develop,,,,,,
-ITE367/CS367,Enterprise Application Development,,,,,,
-ITE371,Health Information Technology Concepts and Practices,,,,,DL,
-ITE382/CS382,Mobile Device Software Development,,,,,,
-ITE405,Internetworking Devices,,CN,,,CN,
-ITE406,The Internet,,CN,,,CN,
-ITE407,Network Processes and Protocols,,,CN,,,CN
-ITE408,Enterprise Network Design and Management,,,CN,,,CN
-ITE441,System Integration & Architecture, "", "DL", "", "", "DL", ""
-ITE450,Human Computer Interaction, "", "DL", "", "", "DL", ""
-ITE451,Software Engineering,DL,,DL,DL,,DL
-ITE452/CS452L,Senior Software Engineering Project,BL,BL,,BL,BL,
-MA308,Discrete Mathematics, "D", "BL", "BL", "D", "BL", "BL"
-MA310,Matrices & Linear Algebra,"D","","BL","D","","BL"
-MA331,Applied Probability & Statistics,"BL","BL","","BL","BL",""
-UNV300,Pathways to Success,"DL","DL","DL","DL","DL","DL"
-UNV400,Career Seminar,"DL","DL","DL","DL","DL","DL"
-Elective1,Elective1,"DL","DL","DL","DL","DL","DL"
-Elective2,Elective2,"DL","DL","DL","DL","DL","DL"
-Elective3,Elective3,"DL","DL","DL","DL","DL","DL"
-Elective4,Elective4,"DL","DL","DL","DL","DL","DL"
-Elective5,Elective5,"DL","DL","DL","DL","DL","DL"
+"COL 1","COL 2","COL 3","COL 4","COL 5","COL 6","COL 7","COL 8"
+"courseNum","courseName","Fall_Odd","Spr_Even","Sum_Even","Fall_Even","Spr_Odd","Sum_Odd"
+"CS307","Foundations of Web Development",,"DL",,,"DL",
+"CS309/CS309L","Introduction to Digital Logic Design/Digital Design Lab","CN","CD","DL","CN","CD","DL"
+"CS310","Professional Ethics of Computing","DL","DL","DL","DL","DL","DL"
+"CS317","Computer Science I","SCN","SCD","DL","SCN","SCD","DL"
+"CS318","Computer Science II","SCN","SND","SCN","SCD","SCN","SCN"
+"CS340","Introduction to Assembly Language and Computer Organization",,"CD","CD",,"CD","CD"
+"CS365/ITE365","Visual Application Development","DL",,,"DL",,
+"CS367/ITE367","Enterprise Appliccation Development",,,,,"CN",
+"CS372","Data Structures (Computer Science III)","SCN","SCD","SCN","SCD","SCN","SCN"
+"CS380","Programming for the Web",,,"BL",,,"BL"
+"CS382/ITE382","Mobile Device Software Development",,"CN",,,"CN",
+"CS385","Pragmatic Artificial Intelligence â€“ Cloud Based Machine Learning",,,,"DL",,
+"CS409","Computer Organization and Architecture","CN",,,"CN",,
+"CS414","Programming Language","CD",,,"CN",,
+"CS415","Operating Systems",,"SCN",,,"SCD",
+"CS417","Topics in Object Oriented Programming","SCN",,,"SCD",,
+"CS418","Advanced Object Oriented Applications",,,,,,
+"CS423","Computer Graphics/Game Design","CN",,,,,
+"CS451","Software Engineering","DL",,"DL","DL",,"DL"
+"CS452/CS452L","Senior Software Engineering Project/SSEP Lab","BL","BL",,"BL","BL",
+"CS454","System Security Management",,,"DL",,,"DL"
+"CS462","Directed Study/Special Computer Science Project",,,,,,
+"CS472","Analysis of Algorithms",,"SCN",,,"SCN",
+"CS474","Introduction to Formal Language Theory",,,,,,
+"CS475","Introduction to the Theory of Computing",,,"SCD",,,
+"CS484","Applied Cryptography and System Security","DL",,,"DL",,
+"CS485","Modern Artificial Intelligence",,,,,,"SCN"
+"CS486","Natural Language Processing",,,,,,"SCN"
+"CS487","Robotics",,,,"CN",,
+"CS488","AI Reasoning, Decisions, and Learning",,,,,,
+"CS489","Soft Computing and Fuzzy Logic",,,,,,
+"ITE301","Problem Solving with Computers","DL","DL","DL","DL","DL","DL"
+"ITE305","Networking Fundamentals","CN",,"CN","CN",,"CN"
+"ITE306","Local Area Networks","CN",,"CN","CN",,"CN"
+"ITE307","Wide Area Networks",,"CN",,,"CN",
+"ITE308","Network Architectures",,"CN",,,"CN",
+"ITE313","Data Analysis & Visualization",,"DL",,,"DL",
+"ITE315","Scripting Languages and System Administration",,,"CN",,,"DL"
+"ITE321","System Analysis & Design","DL",,,"DL",,
+"ITE327/ITE327L","Database Systems/Database Systems Lab","CN",,"DL","CN",,"DL"
+"ITE350","UX Design",,,"DL",,,"DL"
+"ITE365/CS365","Visual Application Develop",,,,,,
+"ITE367/CS367","Enterprise Application Development",,,,,,
+"ITE371","Health Information Technology Concepts and Practices",,,,,"DL",
+"ITE382/CS382","Mobile Device Software Development",,,,,,
+"ITE405","Internetworking Devices",,"CN",,,"CN",
+"ITE406","The Internet",,"CN",,,"CN",
+"ITE407","Network Processes and Protocols",,,"CN",,,"CN"
+"ITE408","Enterprise Network Design and Management",,,"CN",,,"CN"
+"ITE441","System Integration & Architecture"," """," DL"," """," """," DL"," """
+"ITE450","Human Computer Interaction"," """," DL"," """," """," DL"," """
+"ITE451","Software Engineering","DL",,"DL","DL",,"DL"
+"ITE452","Senior Software Engineering Project","BL","BL",,"BL","BL",
+"MA308","Discrete Mathematics"," D"," BL"," BL"," D"," BL"," BL"
+"MA310","Matrices & Linear Algebra","D",,"BL","D",,"BL"
+"MA331","Applied Probability & Statistics","BL","BL",,"BL","BL",
+"UNV300","Pathways to Success","DL","DL","DL","DL","DL","DL"
+"UNV400","Career Seminar","DL","DL","DL","DL","DL","DL"
+"Elective1","Elective1","DL","DL","DL","DL","DL","DL"
+"Elective2","Elective2","DL","DL","DL","DL","DL","DL"
+"Elective3","Elective3","DL","DL","DL","DL","DL","DL"
+"Elective4","Elective4","DL","DL","DL","DL","DL","DL"
+"Elective5","Elective5","DL","DL","DL","DL","DL","DL"
+"ITE313","Data Analysis & Visualization",NULL,"DL",NULL,NULL,"DL",NULL
+"ITE315","Scripting Languages and Systems",NULL,NULL,"CN",NULL,NULL,"DL"
+"MA321","Applied Probability and Statistics","D","D",NULL,"D","D",NULL
+"ITE451","Software Engineering","DL","DL",NULL,"DL","DL",NULL
+"ITE452","Senior Software Engineering","DL","DL",NULL,"DL","DL",NULL
+"ITE350","UX Design",NULL,NULL,"D",NULL,NULL,"D"
